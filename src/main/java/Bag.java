@@ -114,6 +114,7 @@ public abstract class Bag {
             int lastIndex = this.content.size();
             String item = this.content.get(lastIndex - 1);
             this.content.remove(lastIndex-1);
+            this.numberOfContents -= 1;
             return item;
 
         }

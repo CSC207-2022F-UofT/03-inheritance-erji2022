@@ -10,20 +10,26 @@ class BagMain {
      * TODO: Implement this method
      * Enhance each of the bags in bags. If double_enhance_handbags is
      * True, then enhance any HandBags a second time.
-     *
+     * <p>
      * This method should work for *all* Bags! We will test this method
      * on new Bag types (and HandBag subclasses)!
      */
     public static void enhanceBags(Bag[] bags, boolean double_enhance_handbags) {
-        // TODO: Implement this.
-        for (Bag bag : bags){
+        for (Bag bag: bags){
             bag.enhance();
-            if (double_enhance_handbags){
-                bag.enhance();
+        }
+        if (double_enhance_handbags){
+            for(Bag bag: bags){
+                if ( bag instanceof HandBag ){
+                    bag.enhance();
+
+                }
+
             }
         }
     }
 
+    // TODO: Implement this
     /**
      * TODO: Implement this method
      * Return the total number of straps in CrossbodyBags in bags.
